@@ -3,182 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alwaly Agency | Premium</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>التاجر للدعاية | Agency</title>
 
 <style>
-
-/* ===== Background ===== */
-body{
+*{
     margin:0;
-    font-family:Arial;
-    background:linear-gradient(135deg,#050505,#0a0a0a,#000);
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#0b0b0f;
     color:#fff;
 }
 
-/* ===== Hero ===== */
+/* Navbar */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav h1{
+    font-size:20px;
+    color:#ff4b2b;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 10px;
+    font-size:14px;
+}
+
+/* Hero */
 .hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:60px 20px;
+    background:linear-gradient(135deg,#ff416c,#ff4b2b,#111);
 }
 
-.hero img{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    box-shadow:0 0 30px #00ffcc;
-}
-
-.hero h1{
-    margin:15px 0 5px;
-    font-size:28px;
+.hero h2{
+    font-size:50px;
+    margin-bottom:10px;
 }
 
 .hero p{
-    color:#aaa;
+    font-size:18px;
+    opacity:0.9;
+    max-width:600px;
 }
 
-/* ===== Stats ===== */
+.btn{
+    margin-top:20px;
+    padding:12px 25px;
+    background:#fff;
+    color:#000;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Stats */
 .stats{
     display:flex;
     justify-content:center;
-    gap:30px;
-    margin:30px 0;
-    flex-wrap:wrap;
-}
-
-.stat{
-    background:#111;
-    padding:15px 25px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,0.05);
-}
-
-/* ===== Services ===== */
-.section{
+    gap:40px;
+    padding:60px 20px;
     text-align:center;
-    padding:30px 20px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+.stat h3{
+    font-size:30px;
+    color:#ff4b2b;
+}
+
+/* Sections */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+h2{
+    font-size:30px;
+    margin-bottom:20px;
+    color:#ff4b2b;
+}
+
+/* Services */
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
     gap:20px;
-    margin-top:20px;
 }
 
 .card{
-    background:#111;
+    background:#1a1a1a;
     padding:25px;
+    width:220px;
     border-radius:15px;
-    transition:.3s;
-    border:1px solid rgba(255,255,255,0.05);
+    transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    background:#00ffcc;
-    color:#000;
+    background:#ff4b2b;
 }
 
-/* ===== Portfolio ===== */
-.portfolio{
-    padding:30px 20px;
+/* Testimonials */
+.testimonials{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
 }
 
-.item{
-    background:#111;
-    margin:10px auto;
-    padding:15px;
-    border-radius:12px;
-    width:85%;
+.testimonial{
+    background:#151515;
+    padding:20px;
+    width:250px;
+    border-radius:15px;
 }
 
-/* ===== Button ===== */
-.btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 25px;
-    background:#00ffcc;
-    color:#000;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
-}
-
-/* ===== Footer ===== */
+/* Footer */
 footer{
+    background:#000;
+    padding:20px;
     text-align:center;
-    padding:25px;
-    color:#666;
-    border-top:1px solid #222;
-    margin-top:40px;
+    opacity:0.7;
 }
-
 </style>
+
 </head>
 
 <body>
 
-<!-- HERO -->
+<nav>
+    <h1>التاجر للدعاية</h1>
+    <div>
+        <a href="#services">خدماتنا</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">تواصل</a>
+    </div>
+</nav>
+
 <div class="hero">
-    <img src="logo.jpeg">
-    <h1>Alwaly Agency</h1>
-    <p>We Build Modern Digital Experiences</p>
+    <h2>نصنع علامة قوية لعملك</h2>
+    <p>
+        شركة التاجر للدعاية تقدم حلول تسويق رقمية، إعلانات ممولة، وتصميمات احترافية تساعدك تنمو بسرعة.
+    </p>
+
+    <a class="btn" href="https://wa.me/201040513887">ابدأ الآن</a>
 </div>
 
-<!-- STATS -->
 <div class="stats">
-    <div class="stat">+50 Websites</div>
-    <div class="stat">+30 Clients</div>
-    <div class="stat">24/7 Support</div>
-</div>
-
-<!-- SERVICES -->
-<div class="section">
-    <h2>Services</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <i class="fas fa-laptop-code"></i>
-            <h3>Web Design</h3>
-            <p>Modern and responsive websites</p>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-bullhorn"></i>
-            <h3>Digital Marketing</h3>
-            <p>Grow your business online</p>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-gem"></i>
-            <h3>Brand Identity</h3>
-            <p>Strong visual identity for your brand</p>
-        </div>
-
+    <div class="stat">
+        <h3>+500</h3>
+        <p>عميل</p>
+    </div>
+    <div class="stat">
+        <h3>+1200</h3>
+        <p>حملة إعلانية</p>
+    </div>
+    <div class="stat">
+        <h3>+5 سنوات</h3>
+        <p>خبرة</p>
     </div>
 </div>
 
-<!-- PORTFOLIO -->
-<div class="section">
-    <h2>Our Work</h2>
+<section id="services">
+    <h2>خدماتنا</h2>
 
-    <div class="item">Company Website Demo</div>
-    <div class="item">Online Store Demo</div>
-    <div class="item">Personal Profile Demo</div>
-</div>
+    <div class="cards">
+        <div class="card">إعلانات ممولة</div>
+        <div class="card">تصميم سوشيال ميديا</div>
+        <div class="card">إدارة صفحات</div>
+        <div class="card">تسويق رقمي</div>
+    </div>
+</section>
 
-<!-- CTA -->
-<div class="section">
-    <h2>Start Your Project</h2>
-    <a class="btn" href="https://wa.me/201024941083">Contact Us</a>
-</div>
+<section id="about">
+    <h2>من نحن</h2>
+    <p style="max-width:700px;margin:auto;opacity:0.8">
+        نحن شركة التاجر للدعاية نعمل على بناء هوية قوية لعلامتك التجارية،
+        ونساعدك تصل لأكبر عدد من العملاء بأحدث استراتيجيات التسويق الرقمي.
+    </p>
+</section>
+
+<section>
+    <h2>آراء العملاء</h2>
+
+    <div class="testimonials">
+        <div class="testimonial">شغل احترافي جدًا ونتائج ممتازة 🔥</div>
+        <div class="testimonial">زودوا مبيعاتي بشكل كبير 👌</div>
+        <div class="testimonial">أفضل فريق تعاملت معاه 💯</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>تواصل معنا</h2>
+    <p>جاهزين نساعدك تكبر مشروعك 🚀</p>
+
+    <a class="btn" href="https://wa.me/201040513887">واتساب مباشر</a>
+</section>
 
 <footer>
-© شركة التاجر للدعاية
+    © 2026 التاجر للدعاية - جميع الحقوق محفوظة
 </footer>
 
 </body>
