@@ -65,29 +65,15 @@ nav a{
     width:160px;
     border-radius:20px;
     margin-bottom:20px;
-
     filter: drop-shadow(0 0 10px #ff4b2b)
             drop-shadow(0 0 25px #ff4b2b);
-
     animation: glowPulse 2s infinite ease-in-out;
 }
 
 @keyframes glowPulse{
-    0%{
-        transform:scale(1);
-        filter: drop-shadow(0 0 8px #ff4b2b)
-                drop-shadow(0 0 20px #ff4b2b);
-    }
-    50%{
-        transform:scale(1.08);
-        filter: drop-shadow(0 0 25px #ff4b2b)
-                drop-shadow(0 0 50px #ff4b2b);
-    }
-    100%{
-        transform:scale(1);
-        filter: drop-shadow(0 0 8px #ff4b2b)
-                drop-shadow(0 0 20px #ff4b2b);
-    }
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
 }
 
 .hero h2{
@@ -135,7 +121,7 @@ nav a{
     max-width:700px;
 }
 
-/* ===== SERVICES (IMPROVED) ===== */
+/* ===== SECTIONS ===== */
 section{
     padding:80px 20px;
     text-align:center;
@@ -147,6 +133,7 @@ h2{
     color:#ff4b2b;
 }
 
+/* ===== SERVICES ===== */
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -162,13 +149,33 @@ h2{
     transition:0.4s;
     position:relative;
     overflow:hidden;
-    line-height:1.6;
     border:1px solid rgba(255,75,43,0.2);
+    cursor:pointer;
+
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeInUp 0.6s forwards;
 }
 
-/* Hover 3D + Glow */
+.card:nth-child(1){animation-delay:0.1s;}
+.card:nth-child(2){animation-delay:0.2s;}
+.card:nth-child(3){animation-delay:0.3s;}
+.card:nth-child(4){animation-delay:0.4s;}
+.card:nth-child(5){animation-delay:0.5s;}
+.card:nth-child(6){animation-delay:0.6s;}
+.card:nth-child(7){animation-delay:0.7s;}
+.card:nth-child(8){animation-delay:0.8s;}
+
+@keyframes fadeInUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* 3D Hover */
 .card:hover{
-    transform:translateY(-10px) scale(1.03);
+    transform:translateY(-10px) scale(1.05);
     box-shadow:0 15px 40px rgba(255,75,43,0.25);
     border-color:#ff4b2b;
 }
@@ -187,6 +194,35 @@ h2{
 
 .card:hover::before{
     left:100%;
+}
+
+/* ICON */
+.icon{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.card b{
+    display:block;
+    margin-bottom:8px;
+    color:#ff4b2b;
+}
+
+/* ===== POPUP ===== */
+.popup{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#111;
+    padding:15px 20px;
+    border-radius:12px;
+    border:1px solid #ff4b2b;
+    display:none;
+    max-width:300px;
+    text-align:center;
+    z-index:2000;
+    box-shadow:0 10px 30px rgba(255,75,43,0.3);
 }
 
 /* ===== FOOTER ===== */
@@ -216,8 +252,7 @@ footer{
 <div class="hero">
 
     <div class="logo-glow">
-        <img src="https://raw.githubusercontent.com/hnanamr656-prog/Company-website/main/logo.jpeg" 
-        alt="logo">
+        <img src="https://raw.githubusercontent.com/hnanamr656-prog/Company-website/main/logo.jpeg">
     </div>
 
     <h2>نصنع هوية قوية لعلامتك</h2>
@@ -227,7 +262,7 @@ footer{
 
 </div>
 
-<!-- ABOUT PARALLAX -->
+<!-- ABOUT -->
 <div class="parallax"
 style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')">
 
@@ -235,10 +270,7 @@ style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14
 
 <div class="parallax-content">
     <h2>من نحن</h2>
-    <p>
-        شركة التاجر للدعاية نعمل على بناء العلامات التجارية
-        باستخدام أحدث استراتيجيات التسويق الرقمي والإعلانات.
-    </p>
+    <p>شركة التاجر للدعاية نعمل على بناء العلامات التجارية باستخدام أحدث أساليب التسويق الرقمي.</p>
 </div>
 
 </div>
@@ -246,33 +278,78 @@ style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14
 <!-- SERVICES -->
 <section id="services">
 
-    <h2>خدماتنا</h2>
+<h2>خدماتنا</h2>
 
-    <div class="cards">
+<div class="cards">
 
-        <div class="card">إعلانات ممولة تيليجرام + بوتات + شحن نجوم</div>
-        <div class="card">توثيق حسابات + إعلانات سوشيال ميديا</div>
-        <div class="card">زيادة متابعين + مشاهدات + تفاعل</div>
-        <div class="card">إعلانات تيك توك + نمو الحسابات</div>
-        <div class="card">شحن عملات تيك توك + توثيق</div>
-        <div class="card">إنشاء مواقع إلكترونية احترافية</div>
+<div class="card" data-text="إعلانات ممولة تيليجرام + بوتات + شحن نجوم">
+<div class="icon">📢</div>
+<b>إعلانات ممولة</b>
+<p>تيليجرام + سوشيال ميديا</p>
+</div>
 
-    </div>
+<div class="card" data-text="تطوير بوتات تيليجرام احترافية">
+<div class="icon">🤖</div>
+<b>بوتات تيليجرام</b>
+<p>أتمتة + إدارة</p>
+</div>
+
+<div class="card" data-text="زيادة متابعين ومشاهدات وتفاعل">
+<div class="icon">📈</div>
+<b>نمو السوشيال</b>
+<p>متابعين + تفاعل</p>
+</div>
+
+<div class="card" data-text="إعلانات تيك توك + نمو حسابات">
+<div class="icon">🎯</div>
+<b>تيك توك</b>
+<p>إعلانات + وصول</p>
+</div>
+
+<div class="card" data-text="شحن عملات تيك توك">
+<div class="icon">💰</div>
+<b>شحن عملات</b>
+<p>TikTok Coins</p>
+</div>
+
+<div class="card" data-text="تصميم مواقع احترافية">
+<div class="icon">🌐</div>
+<b>إنشاء مواقع</b>
+<p>Web Design</p>
+</div>
+
+</div>
+
+<div class="popup" id="popup"></div>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-
-    <h2>تواصل معنا</h2>
-    <a class="btn" href="https://wa.me/201040513887">واتساب مباشر</a>
-
+<h2>تواصل معنا</h2>
+<a class="btn" href="https://wa.me/201040513887">واتساب مباشر</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    © 2026 التاجر للدعاية - جميع الحقوق محفوظة
+© 2026 التاجر للدعاية
 </footer>
+
+<script>
+const cards = document.querySelectorAll(".card");
+const popup = document.getElementById("popup");
+
+cards.forEach(card=>{
+    card.addEventListener("mouseenter", ()=>{
+        popup.style.display="block";
+        popup.innerText = card.getAttribute("data-text");
+    });
+
+    card.addEventListener("mouseleave", ()=>{
+        popup.style.display="none";
+    });
+});
+</script>
 
 </body>
 </html>
