@@ -45,9 +45,62 @@ nav a{
     font-size:14px;
 }
 
-/* ===== BUTTON ===== */
+/* ===== HERO ===== */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+}
+
+/* ===== LOGO GLOW ===== */
+.logo-glow img{
+    width:160px;
+    border-radius:20px;
+    margin-bottom:20px;
+
+    filter: drop-shadow(0 0 10px #ff4b2b)
+            drop-shadow(0 0 25px #ff4b2b);
+
+    animation: glowPulse 2s infinite ease-in-out;
+}
+
+@keyframes glowPulse{
+    0%{
+        transform:scale(1);
+        filter: drop-shadow(0 0 8px #ff4b2b)
+                drop-shadow(0 0 20px #ff4b2b);
+    }
+    50%{
+        transform:scale(1.08);
+        filter: drop-shadow(0 0 25px #ff4b2b)
+                drop-shadow(0 0 50px #ff4b2b);
+    }
+    100%{
+        transform:scale(1);
+        filter: drop-shadow(0 0 8px #ff4b2b)
+                drop-shadow(0 0 20px #ff4b2b);
+    }
+}
+
+.hero h2{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    opacity:0.9;
+    max-width:600px;
+}
+
 .btn{
-    display:inline-block;
     margin-top:20px;
     padding:12px 25px;
     background:#fff;
@@ -59,75 +112,68 @@ nav a{
 
 /* ===== PARALLAX ===== */
 .parallax{
-    position: relative;
-    min-height: 100vh;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    position:relative;
+    min-height:100vh;
+    background-attachment:fixed;
+    background-position:center;
+    background-size:cover;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:60px 20px;
 }
 
 .overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.65);
+    background:rgba(0,0,0,0.6);
 }
 
 .parallax-content{
     position:relative;
     z-index:2;
-    max-width:750px;
+    max-width:700px;
 }
 
-.parallax h2{
-    font-size:50px;
-    margin-bottom:10px;
-}
-
-.parallax p{
-    opacity:0.9;
-    font-size:18px;
-}
-
-/* ===== SECTIONS ===== */
+/* ===== SERVICES (IMPROVED) ===== */
 section{
     padding:80px 20px;
     text-align:center;
 }
 
-/* ===== CARDS ===== */
+h2{
+    font-size:30px;
+    margin-bottom:30px;
+    color:#ff4b2b;
+}
+
 .cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
-    perspective:1000px;
+    max-width:1000px;
+    margin:auto;
 }
 
 .card{
-    background:#1a1a1a;
-    padding:20px;
-    width:260px;
+    background:linear-gradient(145deg,#1a1a1a,#111);
+    padding:25px;
     border-radius:15px;
-    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    transition:0.4s;
     position:relative;
     overflow:hidden;
-    transform-style:preserve-3d;
     line-height:1.6;
+    border:1px solid rgba(255,75,43,0.2);
 }
 
-/* 3D Hover */
+/* Hover 3D + Glow */
 .card:hover{
-    transform: rotateY(12deg) rotateX(10deg) scale(1.05);
-    box-shadow: 0 20px 40px rgba(255,75,43,0.3);
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 15px 40px rgba(255,75,43,0.25);
+    border-color:#ff4b2b;
 }
 
-/* shine effect */
+/* Shine */
 .card::before{
     content:"";
     position:absolute;
@@ -135,39 +181,12 @@ section{
     left:-100%;
     width:100%;
     height:100%;
-    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.1),transparent);
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent);
     transition:0.5s;
 }
 
 .card:hover::before{
     left:100%;
-}
-
-/* ===== COMPANY SECTION ===== */
-.company-section{
-    padding:80px 20px;
-    text-align:center;
-}
-
-.company-box{
-    max-width:800px;
-    margin:auto;
-    background:#151515;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
-    transition:0.4s;
-}
-
-.company-box:hover{
-    transform:scale(1.02);
-}
-
-.company-box img{
-    width:100%;
-    border-radius:12px;
-    margin-bottom:15px;
-    object-fit:cover;
 }
 
 /* ===== FOOTER ===== */
@@ -176,7 +195,6 @@ footer{
     padding:20px;
     text-align:center;
     opacity:0.7;
-    font-size:14px;
 }
 </style>
 
@@ -190,53 +208,26 @@ footer{
     <div>
         <a href="#services">الخدمات</a>
         <a href="#about">من نحن</a>
-        <a href="#company">الشركة</a>
         <a href="#contact">تواصل</a>
     </div>
 </nav>
 
 <!-- HERO -->
-<div class="parallax"
-style="background-image:url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80')">
+<div class="hero">
 
-<div class="overlay"></div>
+    <div class="logo-glow">
+        <img src="https://raw.githubusercontent.com/hnanamr656-prog/Company-website/main/logo.jpeg" 
+        alt="logo">
+    </div>
 
-<div class="parallax-content">
     <h2>نصنع هوية قوية لعلامتك</h2>
-    <p>حلول تسويق رقمية وإعلانات ممولة تساعدك على النمو بسرعة</p>
+    <p>حلول تسويق رقمية + إعلانات ممولة + تطوير براندات احترافية</p>
+
     <a class="btn" href="https://wa.me/201040513887">ابدأ الآن</a>
-</div>
 
 </div>
 
-<!-- STATS -->
-<section>
-    <h2>إنجازاتنا</h2>
-
-    <div class="cards">
-        <div class="card">+500 عميل</div>
-        <div class="card">+1200 حملة</div>
-        <div class="card">+5 سنوات خبرة</div>
-    </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-    <h2>خدماتنا</h2>
-
-    <div class="cards">
-
-        <div class="card">إعلانات ممولة تيليجرام + بوتات + شحن نجوم</div>
-        <div class="card">توثيق حسابات + إعلانات سوشيال ميديا</div>
-        <div class="card">زيادة متابعين + مشاهدات + تفاعل</div>
-        <div class="card">إعلانات تيك توك + نمو حسابات</div>
-        <div class="card">شحن عملات تيك توك + توثيق</div>
-        <div class="card">إنشاء مواقع إلكترونية احترافية</div>
-
-    </div>
-</section>
-
-<!-- ABOUT -->
+<!-- ABOUT PARALLAX -->
 <div class="parallax"
 style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')">
 
@@ -252,20 +243,19 @@ style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14
 
 </div>
 
-<!-- COMPANY IMAGE -->
-<section id="company" class="company-section">
+<!-- SERVICES -->
+<section id="services">
 
-    <h2>صورة الشركة</h2>
+    <h2>خدماتنا</h2>
 
-    <div class="company-box">
+    <div class="cards">
 
-        <!-- 👇 استبدلي الرابط ده بصورة شركتك -->
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="التاجر للدعاية">
-
-        <p>
-            نحن شركة التاجر للدعاية نقدم حلول تسويق حديثة وبناء براندات قوية
-            لمساعدة العملاء على تحقيق النجاح الرقمي.
-        </p>
+        <div class="card">إعلانات ممولة تيليجرام + بوتات + شحن نجوم</div>
+        <div class="card">توثيق حسابات + إعلانات سوشيال ميديا</div>
+        <div class="card">زيادة متابعين + مشاهدات + تفاعل</div>
+        <div class="card">إعلانات تيك توك + نمو الحسابات</div>
+        <div class="card">شحن عملات تيك توك + توثيق</div>
+        <div class="card">إنشاء مواقع إلكترونية احترافية</div>
 
     </div>
 
@@ -273,8 +263,10 @@ style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14
 
 <!-- CONTACT -->
 <section id="contact">
+
     <h2>تواصل معنا</h2>
     <a class="btn" href="https://wa.me/201040513887">واتساب مباشر</a>
+
 </section>
 
 <!-- FOOTER -->
