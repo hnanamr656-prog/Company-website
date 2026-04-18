@@ -16,6 +16,21 @@
 body{
     background:#0b0b0f;
     color:#fff;
+    overflow-x:hidden;
+}
+
+/* Animation */
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* Navbar */
@@ -33,18 +48,17 @@ nav{
 }
 
 nav h1{
-    font-size:20px;
     color:#ff4b2b;
 }
 
 nav a{
     color:#fff;
-    text-decoration:none;
     margin:0 10px;
+    text-decoration:none;
     font-size:14px;
 }
 
-/* Hero */
+/* HERO */
 .hero{
     height:100vh;
     display:flex;
@@ -52,18 +66,21 @@ nav a{
     justify-content:center;
     align-items:center;
     text-align:center;
-    background:linear-gradient(135deg,#ff416c,#ff4b2b,#111);
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+    url("https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
 }
 
 .hero h2{
-    font-size:50px;
-    margin-bottom:10px;
+    font-size:55px;
 }
 
 .hero p{
-    font-size:18px;
-    opacity:0.9;
     max-width:600px;
+    margin-top:10px;
+    opacity:0.9;
 }
 
 .btn{
@@ -96,12 +113,6 @@ section{
     text-align:center;
 }
 
-h2{
-    font-size:30px;
-    margin-bottom:20px;
-    color:#ff4b2b;
-}
-
 /* Services */
 .cards{
     display:flex;
@@ -115,27 +126,12 @@ h2{
     padding:25px;
     width:220px;
     border-radius:15px;
-    transition:0.3s;
+    transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-10px) scale(1.05);
     background:#ff4b2b;
-}
-
-/* Testimonials */
-.testimonials{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
-
-.testimonial{
-    background:#151515;
-    padding:20px;
-    width:250px;
-    border-radius:15px;
 }
 
 /* Footer */
@@ -161,22 +157,22 @@ footer{
 </nav>
 
 <div class="hero">
-    <h2>نصنع علامة قوية لعملك</h2>
-    <p>
-        شركة التاجر للدعاية تقدم حلول تسويق رقمية، إعلانات ممولة، وتصميمات احترافية تساعدك تنمو بسرعة.
+    <h2 class="fade-in">نصنع هوية قوية لعلامتك</h2>
+    <p class="fade-in">
+        حلول تسويق وإعلانات ممولة وتصميمات احترافية تساعدك على النمو بسرعة.
     </p>
 
-    <a class="btn" href="https://wa.me/201040513887">ابدأ الآن</a>
+    <a class="btn fade-in" href="https://wa.me/201040513887">ابدأ الآن</a>
 </div>
 
-<div class="stats">
+<div class="stats fade-in">
     <div class="stat">
         <h3>+500</h3>
         <p>عميل</p>
     </div>
     <div class="stat">
         <h3>+1200</h3>
-        <p>حملة إعلانية</p>
+        <p>حملة</p>
     </div>
     <div class="stat">
         <h3>+5 سنوات</h3>
@@ -190,7 +186,7 @@ footer{
     <div class="cards">
         <div class="card">إعلانات ممولة</div>
         <div class="card">تصميم سوشيال ميديا</div>
-        <div class="card">إدارة صفحات</div>
+        <div class="card">إاعلانات تليجرام</div>
         <div class="card">تسويق رقمي</div>
     </div>
 </section>
@@ -198,25 +194,13 @@ footer{
 <section id="about">
     <h2>من نحن</h2>
     <p style="max-width:700px;margin:auto;opacity:0.8">
-        نحن شركة التاجر للدعاية نعمل على بناء هوية قوية لعلامتك التجارية،
-        ونساعدك تصل لأكبر عدد من العملاء بأحدث استراتيجيات التسويق الرقمي.
+        شركة التاجر للدعاية متخصصة في التسويق الرقمي وبناء العلامات التجارية
+        باستخدام أحدث استراتيجيات الإعلانات والتصميم.
     </p>
-</section>
-
-<section>
-    <h2>آراء العملاء</h2>
-
-    <div class="testimonials">
-        <div class="testimonial">شغل احترافي جدًا ونتائج ممتازة 🔥</div>
-        <div class="testimonial">زودوا مبيعاتي بشكل كبير 👌</div>
-        <div class="testimonial">أفضل فريق تعاملت معاه 💯</div>
-    </div>
 </section>
 
 <section id="contact">
     <h2>تواصل معنا</h2>
-    <p>جاهزين نساعدك تكبر مشروعك 🚀</p>
-
     <a class="btn" href="https://wa.me/201040513887">واتساب مباشر</a>
 </section>
 
