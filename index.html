@@ -1,86 +1,304 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>التاجر للدعاية | Agency</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0b0b0f;color:#fff;overflow-x:hidden;line-height:1.7}
-nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 40px;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);z-index:1000}
-nav h1{color:#ff4b2b;font-size:19px}
-nav a{color:#fff;text-decoration:none;margin:0 10px;font-size:14px}
-.hero,.parallax{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:90px 20px;background-size:cover;background-position:center;background-attachment:fixed}
-.hero{background-image:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80')}
-.overlay{position:absolute;inset:0;background:rgba(0,0,0,.58)}
-.hero-content,.parallax-content{position:relative;z-index:2;max-width:760px}
-.logo-glow img{width:170px;border-radius:22px;filter:drop-shadow(0 0 10px #ff4b2b) drop-shadow(0 0 28px #ff4b2b);animation:glow 2.4s infinite ease-in-out;margin-bottom:22px}
-@keyframes glow{50%{transform:scale(1.07);filter:drop-shadow(0 0 20px #ff4b2b) drop-shadow(0 0 46px #ff4b2b)}}
-.hero h2,.parallax h2{font-size:48px;margin-bottom:12px}.tagline{opacity:.7;font-size:14px;letter-spacing:2px;margin-bottom:12px}
-.btn{display:inline-block;margin-top:24px;padding:13px 28px;background:#fff;color:#000;text-decoration:none;border-radius:12px;font-weight:bold}
-section{padding:90px 20px;text-align:center}
-.section-label{color:#9c9c9c;font-size:14px;letter-spacing:2px;margin-bottom:10px}.section-title{font-size:34px;color:#ff4b2b;margin-bottom:42px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;max-width:1100px;margin:auto}
-.card{background:linear-gradient(145deg,#171717,#101010);padding:28px;border-radius:20px;border:1px solid rgba(255,75,43,.14);text-align:right;position:relative;overflow:hidden;transition:.35s;cursor:pointer;opacity:0;transform:translateY(35px)}
-.card.show{opacity:1;transform:translateY(0)}
-.card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 18px 38px rgba(255,75,43,.22);border-color:#ff4b2b}
-.card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.08),transparent);transition:.6s}.card:hover::before{left:100%}
-.icon{font-size:28px;margin-bottom:10px}.card b{display:block;color:#ff4b2b;font-size:18px;margin-bottom:8px}.card p{font-size:13px;opacity:.82}
-.ai-showcase{max-width:1000px;margin:auto;background:#121212;border-radius:24px;padding:24px;box-shadow:0 16px 40px rgba(0,0,0,.35)}
-.ai-showcase img{width:100%;border-radius:18px;display:block;margin-bottom:18px}
-.ai-showcase p{opacity:.85}
-.popup{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#111;padding:14px 20px;border:1px solid #ff4b2b;border-radius:12px;display:none;z-index:2000;max-width:320px;box-shadow:0 12px 30px rgba(255,75,43,.25)}
-footer{background:#000;padding:22px;text-align:center;opacity:.7}
-@media(max-width:768px){nav{padding:14px 18px}nav a{margin:0 5px;font-size:12px}.hero h2,.parallax h2{font-size:34px}.section-title{font-size:28px}}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+body{
+    background:#0b0b0f;
+    color:#fff;
+    overflow-x:hidden;
+    line-height:1.7;
+}
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 40px;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+}
+nav h1{
+    color:#ff4b2b;
+    font-size:19px;
+}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 10px;
+    font-size:14px;
+}
+.hero,.parallax{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:90px 20px;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+.hero{
+    background-image:
+    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),
+    url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80');
+}
+.hero-content,.parallax-content{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+}
+.logo-glow img{
+    width:170px;
+    border-radius:22px;
+    filter:drop-shadow(0 0 10px #ff4b2b) drop-shadow(0 0 28px #ff4b2b);
+    animation:glow 2.4s infinite ease-in-out;
+    margin-bottom:22px;
+}
+@keyframes glow{
+    50%{
+        transform:scale(1.07);
+        filter:drop-shadow(0 0 20px #ff4b2b) drop-shadow(0 0 46px #ff4b2b);
+    }
+}
+.hero h2,.parallax h2{
+    font-size:48px;
+    margin-bottom:12px;
+}
+.tagline{
+    opacity:.7;
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+.btn{
+    display:inline-block;
+    margin-top:24px;
+    padding:13px 28px;
+    background:#fff;
+    color:#000;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:bold;
+}
+section{
+    padding:90px 20px;
+    text-align:center;
+}
+.section-label{
+    color:#9c9c9c;
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+.section-title{
+    font-size:34px;
+    color:#ff4b2b;
+    margin-bottom:42px;
+}
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:22px;
+    max-width:1100px;
+    margin:auto;
+}
+.card{
+    background:linear-gradient(145deg,#171717,#101010);
+    padding:28px;
+    border-radius:20px;
+    border:1px solid rgba(255,75,43,.14);
+    text-align:right;
+    position:relative;
+    overflow:hidden;
+    transition:.35s;
+    cursor:pointer;
+    opacity:0;
+    transform:translateY(35px);
+}
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 18px 38px rgba(255,75,43,.22);
+    border-color:#ff4b2b;
+}
+.icon{
+    font-size:28px;
+    margin-bottom:10px;
+}
+.card b{
+    display:block;
+    color:#ff4b2b;
+    font-size:18px;
+    margin-bottom:8px;
+}
+.card p{
+    font-size:13px;
+    opacity:.82;
+}
+.ai-showcase{
+    max-width:1000px;
+    margin:auto;
+    background:#121212;
+    border-radius:24px;
+    padding:24px;
+}
+.ai-showcase img{
+    width:100%;
+    border-radius:18px;
+    margin-bottom:18px;
+}
+.popup{
+    position:fixed;
+    bottom:28px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#111;
+    padding:14px 20px;
+    border:1px solid #ff4b2b;
+    border-radius:12px;
+    display:none;
+    z-index:2000;
+    max-width:320px;
+}
+footer{
+    background:#000;
+    padding:22px;
+    text-align:center;
+    opacity:.7;
+}
 </style>
 </head>
 <body>
+
 <nav>
-<h1>التاجر للدعاية</h1>
-<div>
-<a href="#services">الخدمات</a>
-<a href="#showcase">أعمالنا</a>
-<a href="#contact">تواصل</a>
+    <h1>التاجر للدعاية</h1>
+    <div>
+        <a href="#services">الخدمات</a>
+        <a href="#showcase">أعمالنا</a>
+        <a href="#contact">تواصل</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-content">
+        <div class="logo-glow">
+            <img src="https://raw.githubusercontent.com/hnanamr656-prog/Company-website/main/logo.jpeg" alt="logo">
+        </div>
+
+        <div class="tagline">AGENCY • MARKETING • GROWTH</div>
+
+        <h2>نحوّل فكرتك إلى علامة قوية</h2>
+        <p>نقدم حلول تسويق رقمية متكاملة تساعد نشاطك على النمو باحترافية.</p>
+
+        <a class="btn" href="https://wa.me/201024941083">ابدأ الآن</a>
+    </div>
 </div>
-</nav><div class="hero">
-<div class="hero-content">
-<div class="logo-glow"><img src="https://raw.githubusercontent.com/hnanamr656-prog/Company-website/main/logo.jpeg" alt="التاجر للدعاية"></div>
-<div class="tagline">AGENCY • MARKETING • GROWTH</div>
-<h2>نحوّل فكرتك إلى علامة قوية</h2>
-<p>نقدم حلول تسويق رقمية متكاملة تساعد نشاطك على الوصول والنمو بشكل احترافي.</p>
-<a class="btn" href="https://wa.me/201040513887">ابدأ الآن</a>
+
+<div class="parallax" style="background-image:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
+url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')">
+    <div class="parallax-content">
+        <h2>من نحن</h2>
+        <p>شركة التاجر للدعاية متخصصة في التسويق الرقمي وبناء الهوية التجارية.</p>
+    </div>
 </div>
-</div><div class="parallax" style="background-image:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')">
-<div class="parallax-content">
-<h2>من نحن</h2>
-<p>شركة التاجر للدعاية متخصصة في الإعلانات الرقمية، بناء الهوية التجارية، وتطوير حضور قوي للعلامات التجارية على مختلف المنصات.</p>
-</div>
-</div><section id="services">
-<div class="section-label">WHAT WE OFFER</div>
-<h2 class="section-title">خدماتنا الاحترافية</h2>
-<div class="cards">
-<div class="card" data-text="إدارة حملات ممولة دقيقة للوصول إلى جمهورك المستهدف."><div class="icon">📢</div><b>إعلانات ممولة</b><p>فيسبوك • إنستجرام • تيك توك</p></div>
-<div class="card" data-text="إنشاء بوتات ذكية لتسهيل الطلبات وخدمة العملاء."><div class="icon">🤖</div><b>بوتات تيليجرام</b><p>أتمتة • إدارة • تطوير</p></div>
-<div class="card" data-text="رفع تفاعل الحسابات بشكل احترافي وآمن."><div class="icon">📈</div><b>نمو الحسابات</b><p>متابعين • مشاهدات • تفاعل</p></div>
-<div class="card" data-text="توثيق الحسابات التجارية على المنصات المختلفة."><div class="icon">✔️</div><b>توثيق حسابات</b><p>سوشيال ميديا</p></div>
-<div class="card" data-text="شحن عملات وهدايا رقمية بسرعة عالية."><div class="icon">💰</div><b>شحن رقمي</b><p>نجوم • عملات • هدايا</p></div>
-<div class="card" data-text="تصميم مواقع حديثة تعكس قوة علامتك التجارية."><div class="icon">🌐</div><b>إنشاء مواقع</b><p>Web Design</p></div>
-</div>
-<div class="popup" id="popup"></div>
-</section><section id="showcase">
-<div class="section-label">AI VISUAL</div>
-<h2 class="section-title">رؤية إبداعية لعلامتك</h2>
-<div class="ai-showcase">
-<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80" alt="AI creative">
-<p>نصمم حضورًا بصريًا مميزًا يجمع بين الإبداع والتقنية ليعكس قوة مشروعك أمام العملاء.</p>
-</div>
-</section><section id="contact">
-<div class="section-label">CONTACT US</div>
-<h2 class="section-title">ابدأ مشروعك معنا</h2>
-<a class="btn" href="https://wa.me/201040513887">واتساب مباشر</a>
-</section><footer>© 2026 التاجر للدعاية - جميع الحقوق محفوظة</footer><script>
+
+<section id="services">
+    <div class="section-label">WHAT WE OFFER</div>
+    <h2 class="section-title">خدماتنا الاحترافية</h2>
+
+    <div class="cards">
+        <div class="card" data-text="إدارة حملات ممولة دقيقة للوصول إلى جمهورك المستهدف">
+            <div class="icon">📢</div>
+            <b>إعلانات ممولة</b>
+            <p>فيسبوك • تيك توك • تيليجرام</p>
+        </div>
+
+        <div class="card" data-text="إنشاء بوتات ذكية لتسهيل الطلبات وخدمة العملاء">
+            <div class="icon">🤖</div>
+            <b>بوتات تيليجرام</b>
+            <p>أتمتة • إدارة • تطوير</p>
+        </div>
+
+        <div class="card" data-text="رفع التفاعل وزيادة المتابعين بشكل احترافي">
+            <div class="icon">📈</div>
+            <b>نمو الحسابات</b>
+            <p>متابعين • مشاهدات • تفاعل</p>
+        </div>
+
+        <div class="card" data-text="تصميم مواقع حديثة تعكس قوة البراند">
+            <div class="icon">🌐</div>
+            <b>إنشاء مواقع</b>
+            <p>Web Design</p>
+        </div>
+    </div>
+
+    <div class="popup" id="popup"></div>
+</section>
+
+<section id="showcase">
+    <div class="section-label">AI VISUAL</div>
+    <h2 class="section-title">رؤية إبداعية لعلامتك</h2>
+
+    <div class="ai-showcase">
+        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" alt="AI Design">
+        <p>نصمم حضورًا بصريًا احترافيًا يجمع بين الإبداع والتقنية ليعكس قوة مشروعك أمام عملائك.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-label">CONTACT US</div>
+    <h2 class="section-title">ابدأ مشروعك معنا</h2>
+    <a class="btn" href="https://wa.me/201024941083">واتساب مباشر</a>
+</section>
+
+<footer>
+© 2026 التاجر للدعاية - جميع الحقوق محفوظة
+</footer>
+
+<script>
 const cards=document.querySelectorAll('.card');
 const popup=document.getElementById('popup');
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show');});},{threshold:.15});
-cards.forEach(card=>{observer.observe(card);card.addEventListener('mouseenter',()=>{popup.innerText=card.dataset.text;popup.style.display='block';});card.addEventListener('mouseleave',()=>popup.style.display='none');});
-</script></body>
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:0.2});
+
+cards.forEach(card=>{
+observer.observe(card);
+
+card.addEventListener('mouseenter',()=>{
+popup.innerText=card.dataset.text;
+popup.style.display='block';
+});
+
+card.addEventListener('mouseleave',()=>{
+popup.style.display='none';
+});
+});
+</script>
+
+</body>
 </html>
