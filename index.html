@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>التاجر للدعاية | Agency</title>
 
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
 *{
     margin:0;
@@ -12,12 +15,14 @@
     box-sizing:border-box;
     font-family:Arial,sans-serif;
 }
+
 body{
     background:#0b0b0f;
     color:#fff;
     overflow-x:hidden;
-    line-height:1.7;
 }
+
+/* NAV */
 nav{
     position:fixed;
     top:0;
@@ -25,258 +30,281 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:16px 40px;
-    background:rgba(0,0,0,.55);
+    padding:15px 40px;
+    background:rgba(0,0,0,.6);
     backdrop-filter:blur(12px);
     z-index:1000;
 }
-nav h1{
-    color:#ff4b2b;
-    font-size:19px;
-}
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin:0 10px;
-    font-size:14px;
-}
-.hero,.parallax{
-    position:relative;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:90px 20px;
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-}
+nav h1{color:#ff4b2b;font-size:18px}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-size:14px}
+
+/* HERO */
 .hero{
-    background-image:
-    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
     url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
 }
-.hero-content,.parallax-content{
-    position:relative;
-    z-index:2;
-    max-width:760px;
-}
+
 .logo-glow img{
-    width:170px;
-    border-radius:22px;
-    filter:drop-shadow(0 0 10px #ff4b2b) drop-shadow(0 0 28px #ff4b2b);
-    animation:glow 2.4s infinite ease-in-out;
-    margin-bottom:22px;
+    width:160px;
+    border-radius:20px;
+    filter:drop-shadow(0 0 10px #ff4b2b) drop-shadow(0 0 25px #ff4b2b);
+    animation:glow 2s infinite ease-in-out;
 }
+
 @keyframes glow{
-    50%{
-        transform:scale(1.07);
-        filter:drop-shadow(0 0 20px #ff4b2b) drop-shadow(0 0 46px #ff4b2b);
-    }
+    50%{transform:scale(1.08)}
 }
-.hero h2,.parallax h2{
-    font-size:48px;
-    margin-bottom:12px;
-}
-.tagline{
-    opacity:.7;
-    font-size:14px;
-    letter-spacing:2px;
-    margin-bottom:12px;
-}
+
+.hero h2{font-size:42px;margin-top:20px}
+.hero p{opacity:.8;margin-top:10px}
+
+/* BUTTON */
 .btn{
-    display:inline-block;
-    margin-top:24px;
-    padding:13px 28px;
+    margin-top:20px;
+    padding:12px 25px;
     background:#fff;
     color:#000;
+    border-radius:10px;
     text-decoration:none;
-    border-radius:12px;
     font-weight:bold;
 }
+
+/* COUNTERS */
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    padding:70px 20px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:40px;
+    color:#ff4b2b;
+}
+
+/* SERVICES */
 section{
     padding:90px 20px;
     text-align:center;
 }
-.section-label{
-    color:#9c9c9c;
-    font-size:14px;
-    letter-spacing:2px;
-    margin-bottom:10px;
-}
+
 .section-title{
-    font-size:34px;
+    font-size:32px;
     color:#ff4b2b;
-    margin-bottom:42px;
+    margin-bottom:40px;
 }
+
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:22px;
+    gap:20px;
     max-width:1100px;
     margin:auto;
 }
+
 .card{
-    background:linear-gradient(145deg,#171717,#101010);
-    padding:28px;
-    border-radius:20px;
-    border:1px solid rgba(255,75,43,.14);
+    background:linear-gradient(145deg,#1a1a1a,#111);
+    padding:25px;
+    border-radius:18px;
     text-align:right;
-    position:relative;
-    overflow:hidden;
-    transition:.35s;
-    cursor:pointer;
+    border:1px solid rgba(255,75,43,.15);
+    transition:.4s;
     opacity:0;
-    transform:translateY(35px);
+    transform:translateY(40px);
 }
+
 .card.show{
     opacity:1;
     transform:translateY(0);
 }
+
 .card:hover{
     transform:translateY(-10px) scale(1.03);
-    box-shadow:0 18px 38px rgba(255,75,43,.22);
     border-color:#ff4b2b;
+    box-shadow:0 15px 35px rgba(255,75,43,.2);
 }
+
 .icon{
-    font-size:28px;
+    font-size:24px;
+    color:#ff4b2b;
     margin-bottom:10px;
 }
+
 .card b{
     display:block;
-    color:#ff4b2b;
-    font-size:18px;
-    margin-bottom:8px;
+    margin-bottom:6px;
 }
-.card p{
-    font-size:13px;
-    opacity:.82;
-}
-.ai-showcase{
-    max-width:1000px;
+
+/* AI SECTION */
+.ai{
+    max-width:900px;
     margin:auto;
     background:#121212;
-    border-radius:24px;
-    padding:24px;
+    padding:20px;
+    border-radius:20px;
 }
-.ai-showcase img{
+
+.ai img{
     width:100%;
-    border-radius:18px;
-    margin-bottom:18px;
+    border-radius:15px;
+    margin-bottom:15px;
 }
-.popup{
+
+/* SCROLL */
+.fade{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* WHATSAPP */
+.whatsapp{
     position:fixed;
-    bottom:28px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#111;
-    padding:14px 20px;
-    border:1px solid #ff4b2b;
-    border-radius:12px;
-    display:none;
-    z-index:2000;
-    max-width:320px;
-}
-footer{
-    background:#000;
-    padding:22px;
-    text-align:center;
-    opacity:.7;
+    bottom:20px;
+    left:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    color:#fff;
+    text-decoration:none;
+    z-index:9999;
 }
 </style>
 </head>
+
 <body>
 
+<!-- NAV -->
 <nav>
-    <h1>التاجر للدعاية</h1>
-    <div>
-        <a href="#services">الخدمات</a>
-        <a href="#showcase">أعمالنا</a>
-        <a href="#contact">تواصل</a>
-    </div>
+<h1>التاجر للدعاية</h1>
+<div>
+<a href="#services">الخدمات</a>
+<a href="#ai">AI</a>
+<a href="#contact">تواصل</a>
+</div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-    <div class="hero-content">
-        <div class="logo-glow">
-            <img src="https://raw.githubusercontent.com/hnanamr656-prog/Company-website/main/logo.jpeg" alt="logo">
-        </div>
-
-        <div class="tagline">AGENCY • MARKETING • GROWTH</div>
-
-        <h2>نحوّل فكرتك إلى علامة قوية</h2>
-        <p>نقدم حلول تسويق رقمية متكاملة تساعد نشاطك على النمو باحترافية.</p>
-
-        <a class="btn" href="https://wa.me/201024941083">ابدأ الآن</a>
-    </div>
+<div class="logo-glow">
+<img src="https://raw.githubusercontent.com/hnanamr656-prog/Company-website/main/logo.jpeg">
+</div>
+<h2>نحوّل فكرتك إلى علامة قوية</h2>
+<p>حلول تسويق رقمية احترافية</p>
+<a class="btn" href="https://wa.me/201024941083">ابدأ الآن</a>
 </div>
 
-<div class="parallax" style="background-image:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
-url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')">
-    <div class="parallax-content">
-        <h2>من نحن</h2>
-        <p>شركة التاجر للدعاية متخصصة في التسويق الرقمي وبناء الهوية التجارية.</p>
-    </div>
+<!-- COUNTERS -->
+<div class="stats fade">
+<div>
+<h3 class="counter" data-target="500">0</h3>
+<p>عميل</p>
+</div>
+<div>
+<h3 class="counter" data-target="1200">0</h3>
+<p>حملة</p>
+</div>
+<div>
+<h3 class="counter" data-target="5">0</h3>
+<p>سنوات</p>
+</div>
 </div>
 
-<section id="services">
-    <div class="section-label">WHAT WE OFFER</div>
-    <h2 class="section-title">خدماتنا الاحترافية</h2>
+<!-- SERVICES -->
+<section id="services" class="fade">
+<h2 class="section-title">خدماتنا</h2>
 
-    <div class="cards">
-        <div class="card" data-text="إدارة حملات ممولة دقيقة للوصول إلى جمهورك المستهدف">
-            <div class="icon">📢</div>
-            <b>إعلانات ممولة</b>
-            <p>فيسبوك • تيك توك • تيليجرام</p>
-        </div>
+<div class="cards">
 
-        <div class="card" data-text="إنشاء بوتات ذكية لتسهيل الطلبات وخدمة العملاء">
-            <div class="icon">🤖</div>
-            <b>بوتات تيليجرام</b>
-            <p>أتمتة • إدارة • تطوير</p>
-        </div>
+<div class="card">
+<div class="icon"><i class="fa-solid fa-bullhorn"></i></div>
+<b>إعلانات ممولة</b>
+<p>سوشيال ميديا + تيك توك</p>
+</div>
 
-        <div class="card" data-text="رفع التفاعل وزيادة المتابعين بشكل احترافي">
-            <div class="icon">📈</div>
-            <b>نمو الحسابات</b>
-            <p>متابعين • مشاهدات • تفاعل</p>
-        </div>
+<div class="card">
+<div class="icon"><i class="fa-solid fa-robot"></i></div>
+<b>بوتات تيليجرام</b>
+<p>تطوير + إدارة</p>
+</div>
 
-        <div class="card" data-text="تصميم مواقع حديثة تعكس قوة البراند">
-            <div class="icon">🌐</div>
-            <b>إنشاء مواقع</b>
-            <p>Web Design</p>
-        </div>
-    </div>
+<div class="card">
+<div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+<b>نمو الحسابات</b>
+<p>متابعين + تفاعل</p>
+</div>
 
-    <div class="popup" id="popup"></div>
+<div class="card">
+<div class="icon"><i class="fa-solid fa-globe"></i></div>
+<b>إنشاء مواقع</b>
+<p>تصميم احترافي</p>
+</div>
+
+</div>
 </section>
 
-<section id="showcase">
-    <div class="section-label">AI VISUAL</div>
-    <h2 class="section-title">رؤية إبداعية لعلامتك</h2>
+<!-- AI -->
+<section id="ai" class="fade">
+<h2 class="section-title">AI VISUAL</h2>
 
-    <div class="ai-showcase">
-        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" alt="AI Design">
-        <p>نصمم حضورًا بصريًا احترافيًا يجمع بين الإبداع والتقنية ليعكس قوة مشروعك أمام عملائك.</p>
-    </div>
+<div class="ai">
+<img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg">
+<p>نصمم حضور بصري احترافي يعكس قوة مشروعك</p>
+</div>
 </section>
 
-<section id="contact">
-    <div class="section-label">CONTACT US</div>
-    <h2 class="section-title">ابدأ مشروعك معنا</h2>
-    <a class="btn" href="https://wa.me/201024941083">واتساب مباشر</a>
+<!-- CONTACT -->
+<section id="contact" class="fade">
+<h2 class="section-title">تواصل معنا</h2>
+<a class="btn" href="https://wa.me/201024941083">واتساب مباشر</a>
 </section>
 
-<footer>
-© 2026 التاجر للدعاية - جميع الحقوق محفوظة
-</footer>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/201024941083">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <script>
-const cards=document.querySelectorAll('.card');
-const popup=document.getElementById('popup');
+
+/* COUNTER */
+const counters=document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+let target=+counter.getAttribute('data-target');
+let count=0;
+
+let update=()=>{
+if(count<target){
+count++;
+counter.innerText=count;
+setTimeout(update,20);
+}else{
+counter.innerText=target;
+}
+};
+update();
+});
+
+/* SCROLL ANIMATION */
+const faders=document.querySelectorAll('.fade');
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
@@ -284,20 +312,20 @@ if(entry.isIntersecting){
 entry.target.classList.add('show');
 }
 });
-},{threshold:0.2});
-
-cards.forEach(card=>{
-observer.observe(card);
-
-card.addEventListener('mouseenter',()=>{
-popup.innerText=card.dataset.text;
-popup.style.display='block';
 });
 
-card.addEventListener('mouseleave',()=>{
-popup.style.display='none';
+faders.forEach(el=>observer.observe(el));
+
+/* CARDS */
+const cards=document.querySelectorAll('.card');
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add('show');
 });
 });
+
+cards.forEach(c=>obs.observe(c));
+
 </script>
 
 </body>
